@@ -29,8 +29,32 @@ const testUsers: User[] = [
   },
   {
     id: 5,
-    name: '高橋吾郎',
+    name: '山本吾郎',
+    companyId: 3,
+  },{
+    id: 6,
+    name: '山田太郎',
     companyId: 2,
+  },
+  {
+    id: 7,
+    name: '田中二郎',
+    companyId: 1,
+  },
+  {
+    id: 8,
+    name: '佐藤三郎',
+    companyId: 2,
+  },
+  {
+    id: 9,
+    name: '鈴木四郎',
+    companyId: 3,
+  },
+  {
+    id: 10,
+    name: '山本吾郎',
+    companyId: 1,
   },
 ]
 
