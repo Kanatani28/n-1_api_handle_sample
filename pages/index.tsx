@@ -23,14 +23,11 @@ export const Home = (): JSX.Element => {
       const users = (await axios.get<User[]>('http://localhost:3000/api/users'))
         .data
 
-      for (const user of users) {
-        const company = (
-          await axios.get<Company>(
-            `http://localhost:3000/api/companies/${user.companyId}`
-          )
-        ).data
-        user.companyName = company.name
-      }
+      await Promise.all(users.map(async user => {
+        await axios.get<Company>(`http://localhost:3000/api/companies/${user.companyId}`).then(res => {
+              user.companyName = res.data.name
+        })
+      }))
       setUsers(users)
       setLoading(false)
     }
